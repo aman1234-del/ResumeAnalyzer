@@ -2,6 +2,7 @@ import os
 from flask import Flask, request, jsonify
 import nltk
 import spacy
+import en_core_web_sm   # ✅ load spaCy model directly
 import PyPDF2
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -9,8 +10,8 @@ from sklearn.linear_model import LogisticRegression
 # Download NLTK resources
 nltk.download('punkt')
 
-# Load spaCy model
-nlp = spacy.load("en_core_web_sm")
+# Load spaCy model properly
+nlp = en_core_web_sm.load()
 
 app = Flask(__name__)
 
