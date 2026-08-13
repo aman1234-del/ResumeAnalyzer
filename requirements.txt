@@ -1,7 +1,6 @@
-flask
+Flask
+gunicorn
 spacy
 nltk
 PyPDF2
 scikit-learn
-pandas
-joblib
