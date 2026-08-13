@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, jsonify
 import nltk
 import spacy
 import PyPDF2
@@ -15,7 +15,6 @@ nlp = spacy.load("en_core_web_sm")
 app = Flask(__name__)
 
 # --- Simple AI vs Human Resume Detector ---
-# For demo purposes, we train a tiny classifier with sample data
 sample_texts = [
     "I am a highly motivated individual with experience in software development and problem solving.",  # human
     "This resume was generated using advanced AI language models to optimize keyword density and ATS scoring.",  # AI
@@ -59,5 +58,6 @@ def upload():
     })
 
 if __name__ == "__main__":
+    # ✅ Critical fix for Render
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
