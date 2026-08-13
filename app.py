@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import nltk
 import spacy
 import en_core_web_sm   # ✅ load spaCy model directly
@@ -29,7 +29,8 @@ clf.fit(X, sample_labels)
 
 @app.route("/")
 def home():
-    return "Resume Analyzer is running on Render!"
+    # Show upload form
+    return render_template("index.html")
 
 @app.route("/upload", methods=["POST"])
 def upload():
