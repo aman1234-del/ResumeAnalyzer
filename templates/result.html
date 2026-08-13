@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Resume Analysis Result</h1>
+
+        <h2>AI Detection:</h2>
+        <p class="ai-result">{{ ai_result }}</p>
+
+        <h2>Extracted Text:</h2>
+        <pre>{{ text }}</pre>
+
+        <h2>Named Entities:</h2>
+        <ul>
+            {% for ent, label in entities %}
+                <li><strong>{{ ent }}</strong> — {{ label }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/" class="back-btn">⬅ Upload another resume</a>
+    </div>
+</body>
+</html>
