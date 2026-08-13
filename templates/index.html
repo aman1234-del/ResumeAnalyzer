@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resume Analyzer</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Resume Analyzer</title>
 </head>
 <body>
-    <div class="container">
-        <h1>🎨 Resume Analyzer</h1>
-        <p>Upload your resume PDF and get instant analysis!</p>
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="resume" accept=".pdf" required>
-            <button type="submit">Analyze Resume</button>
-        </form>
-    </div>
+  <h1>Upload Resume for Analysis</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="resume" required />
+    <button type="submit">Analyze</button>
+  </form>
 </body>
 </html>
